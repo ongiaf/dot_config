@@ -2,6 +2,7 @@ palette = "dracula"
 
 format = """
 $directory \
+$conda \
 $git_branch \
 $git_status \
 $fill \
@@ -91,9 +92,14 @@ format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
 disabled = false
 symbol = ""
 
+[conda]
+style = "bg:overlay fg:pine"
+format = '[](fg:overlay)[$symbol$environment]($style)[](fg:overlay)'
+disabled = false
+
 [python]
 style = "bg:overlay fg:pine"
-format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
+format = '[](fg:overlay)[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)[](fg:overlay)'
 disabled = false
 symbol = ' '
 
