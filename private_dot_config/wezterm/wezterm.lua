@@ -1,0 +1,33 @@
+local wezterm = require("wezterm")
+
+local config = wezterm.config_builder()
+config.automatically_reload_config = true
+
+-- Apperance
+config.color_scheme = "DraculaVanHelsing"
+config.window_decorations = "RESIZE"
+config.window_padding = {
+  left = "1%",
+  right = "0%",
+  top = "1%",
+  bottom = "0%",
+}
+config.hide_tab_bar_if_only_one_tab = true
+config.background = {
+  {
+    source = { File = os.getenv("HOME") .. "/Dropbox/Documents/Themes/Wallpapers/Desktop/METAPHOR WILL.jpg" },
+    hsb = { saturation = 0.5, brightness = 0.03 },
+  },
+}
+
+-- Fonts setting
+config.font = wezterm.font("PragmataPro Liga")
+config.font_size = (wezterm.target_triple == 'aarch64-apple-darwin' and 17 or 13)
+config.window_frame = {}
+config.window_frame.font = wezterm.font("MonoLisa")
+config.window_frame.font_size = (wezterm.target_triple == 'aarch64-apple-darwin' and 12 or 9)
+
+config.max_fps = 60
+config.prefer_egl = true
+
+return config
