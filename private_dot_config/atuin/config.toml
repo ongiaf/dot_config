@@ -1,0 +1,23 @@
+inline_height = 30
+show_preview = true
+style = "full"
+keymap_mode = "vim-normal"
+
+common_subcommands = [
+  "brew",
+  "cargo",
+  "chezmoi",
+  "docker",
+  "git",
+  "pacman",
+  "paru",
+  "port",
+  "systemctl"
+]
+
+common_prefix = [
+  "sudo",
+]
+
+[theme]
+name = "dracula"
