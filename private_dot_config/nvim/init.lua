@@ -1,15 +1,9 @@
-local pack = "tangerine" or "packer" or "paq" or "lazy"
-
 local function bootstrap(url, ref)
     local name = url:gsub(".*/", "")
     local path
 
-    if pack == "lazy" then
-        path = vim.fn.stdpath("data") .. "/lazy/" .. name
-        vim.opt.rtp:prepend(path)
-    else
-        path = vim.fn.stdpath("data") .. "/site/pack/".. pack .. "/start/" .. name
-    end
+    path = vim.fn.stdpath("data") .. "/lazy/" .. name
+    vim.opt.rtp:prepend(path)
 
     if vim.fn.isdirectory(path) == 0 then
         print(name .. ": installing in data dir...")

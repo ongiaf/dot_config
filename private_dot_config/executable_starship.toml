@@ -1,110 +1,89 @@
 palette = "dracula"
 
 format = """
-$directory \
-$conda \
-$git_branch \
-$git_status \
-$fill \
-$c \
-$julia \
-$lua \
-$nodejs \
-$rust \
+$directory\
+$conda\
+$git_branch\
+$git_status\
+$fill\
+$c\
+$julia\
+$lua\
+$nodejs\
+$rust\
 $python\n\
-[  ](fg:iris)
+[  ](fg:green)
 """
 
+
 [palettes.dracula]
-overlay = '#393552'
-love = '#eb6f92'
-gold = '#f6c177'
-rose = '#ea9a97'
-pine = '#3e8fb0'
-foam = '#9ccfd8'
-iris = '#c4a7e7'
+background   = "#0B0D0F"
+green        = "#8AFF80"
+orange       = "#FFCA80"
+pink         = "#FF80BF"
+purple       = "#9580FF"
+red          = "#FF9580"
+yellow       = "#FFFF80"
 
-[os]
-format = "[](fg:overlay)[$symbol]($style)[](fg:overlay)"
-style = "bg:overlay fg:pine"
-disabled = false
-
-[os.symbols]
-Arch = " "
-Macos = "󰀶 "
 
 [directory]
-format = "[](fg:overlay)[$path]($style)[](fg:overlay)"
-style = "bg:overlay fg:pine"
+format = "[](fg:background)[$path]($style)[](fg:background) "
+style = "bg:background fg:green"
 truncation_length = 3
 truncation_symbol = "…/"
 
 [fill]
-style = "fg:overlay"
+style = "fg:background"
 symbol = " "
 
 [git_branch]
-format = "[](fg:overlay)[ $symbol $branch ]($style)[](fg:overlay)"
-style = "bg:overlay fg:foam"
+format = "[](fg:background)[ $symbol $branch ]($style)[](fg:background) "
+style = "bg:background fg:pink"
 symbol = ""
 
 [git_status]
-style = "bg:overlay fg:love"
-format = '[](fg:overlay)[$all_status$ahead_behind]($style)[](fg:overlay)'
-disabled = true
-
-[time]
+style = "bg:background fg:red"
+format = '[](fg:background)[$all_status$ahead_behind]($style)[](fg:background) '
 disabled = false
-format = "[](fg:overlay)[ $time 󰴈 ]($style)[](fg:overlay)"
-style = "bg:overlay fg:rose"
-time_format = "%I:%M%P"
-use_12hr = true
-
-[username]
-disabled = false
-format = "[](fg:overlay)[ $user ]($style)[](fg:overlay)"
-show_always = true
-style_root = "bg:overlay fg:iris"
-style_user = "bg:overlay fg:iris"
 
 # Languages
 [c]
-style = "bg:overlay fg:pine"
-format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
+style = "bg:background fg:orange"
+format = "[](fg:background)[$symbol$version]($style)[](fg:background) "
 disabled = false
 symbol = " "
 
 [julia]
-style = "bg:overlay fg:pine"
-format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
+style = "bg:background fg:orange"
+format = "[](fg:background)[$symbol$version]($style)[](fg:background) "
 disabled = false
 symbol = " "
 
 [nodejs]
-style = "bg:overlay fg:pine"
-format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
+style = "bg:background fg:orange"
+format = "[](fg:background)[$symbol$version]($style)[](fg:background) "
 disabled = false
 symbol = "󰎙 "
 
 [rust]
-style = "bg:overlay fg:pine"
-format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
+style = "bg:background fg:orange"
+format = "[](fg:background)[$symbol$version]($style)[](fg:background) "
 disabled = false
 symbol = ""
 
 [conda]
-style = "bg:overlay fg:pine"
-format = '[](fg:overlay)[$symbol$environment]($style)[](fg:overlay)'
+style = "bg:background fg:yellow"
+format = '[](fg:background)[$symbol$environment]($style)[](fg:background) '
 disabled = false
 
 [python]
-style = "bg:overlay fg:pine"
-format = '[](fg:overlay)[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)[](fg:overlay)'
+style = "bg:background fg:orange"
+format = '[](fg:background)[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)[](fg:background) '
 disabled = false
 symbol = ' '
 
 [lua] 
-style = "bg:overlay fg:pine"
-format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
+style = "bg:background fg:orange"
+format = "[](fg:background)[$symbol$version]($style)[](fg:background) "
 disabled = false
 symbol = '  '

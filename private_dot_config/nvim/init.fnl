@@ -1,6 +1,5 @@
 (import-macros {: map! : exec! : set! : g!} :hibiscus.vim)
 
-
 (let [lazypath (.. (vim.fn.stdpath :data) :/lazy/lazy.nvim)]
   (when (not (vim.loop.fs_stat lazypath))
     (vim.fn.system [:git
@@ -21,7 +20,25 @@
               :config (fn []
                         (local dracula-config (require :dracula))
                         (dracula-config.setup {:italic_comment true
-                                               :transparent_bg true})
+                                               :transparent_bg true
+                                               :colors {:bg "#0B0D0F"
+                                                        :fg "#F8F8F2"
+                                                        :selection "#414D58"
+                                                        :comment "#708CA9"
+                                                        :red "#FF9580"
+                                                        :orange "#FFCA80"
+                                                        :yellow "#FFFF80"
+                                                        :green "#8AFF80"
+                                                        :purple "#9580FF"
+                                                        :cyan "#80FFEA"
+                                                        :pink "#FF80BF"
+                                                        :bright_red "#FFAA99"
+                                                        :bright_green "#A2FF99"
+                                                        :bright_yellow "#FFFF99"
+                                                        :bright_blue "#AA99FF"
+                                                        :bright_magenta "#FF99CC"
+                                                        :bright_cyan "#99FFEE"
+                                                        :bright_white "#FFFFFF"}})
                         (exec! [colorscheme dracula]))}
              {1 :nvim-lualine/lualine.nvim
               ;; :dependencies {1 :nvim-tree/nvim-web-devicons}
@@ -34,10 +51,10 @@
                                                                        :path 1}]}
                                                :tabline {:lualine_a [:buffers]
                                                          :lualine_z [:tabs]}}))}
-              {1 :lukas-reineke/indent-blankline.nvim
+             {1 :lukas-reineke/indent-blankline.nvim
               :main :ibl
-              :config (fn [] (. (require :ibl) :setup ) (map! [n] :<leader>ti ":IBLToggle<cr>" ))
-              }
+              :config (fn [] (. (require :ibl) :setup)
+                        (map! [n] :<leader>ti ":IBLToggle<cr>"))}
              ;; Editor
              {1 :nvim-telescope/telescope.nvim
               :dependencies {1 :nvim-lua/plenary.nvim}
@@ -113,4 +130,3 @@
 (map! [n] ";" ":")
 (map! [n] :<leader><leader> :<c-^>)
 (map! [n] :<leader>o ":e <C-R>=expand(\"%:p:h\") . \"/\" <cr>")
-
