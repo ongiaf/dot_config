@@ -26,12 +26,19 @@ if status is-interactive
     abbr -a gl 'git pull'
 
     # FZF OPTS
-    set -Ux FZF_DEFAULT_OPTS "\
+    set -gx FZF_DEFAULT_OPTS "\
       --height ~60% \
       --color=fg:#F8F8F2,hl:#9580FF \
       --color=fg+:#F8F8F2,hl+:#9580FF \
       --color=info:#FFCA80,prompt:#8AFF80,pointer:#FF80BF \
       --color=marker:#FF80BF,spinner:#FFCA80,header:#9580FF"
+
+    # UV OPTS
+    if command -q uv
+      # tuna pypi mirror
+      set -gx UV_INDEX https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
+      test (uname) = "Darwin" && set -gx UV_PYTHON /opt/homebrew/bin/python3
+    end
 
     # set LS Colors
     command -q vivid && set -gx LS_COLORS (vivid generate dracula)
@@ -56,6 +63,9 @@ if status is-interactive
     command -q zoxide && zoxide init fish | source
     command -q starship && starship init fish | source
     command -q atuin && atuin init fish --disable-up-arrow | source
+
+    # completion
+    command -q op && op completion fish | source
 end
 
 function fish_greeting
