@@ -1,7 +1,6 @@
 inline_height = 30
 show_preview = true
 style = "full"
-keymap_mode = "vim-normal"
 
 common_subcommands = [
   "brew",

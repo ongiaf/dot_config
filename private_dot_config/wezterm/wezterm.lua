@@ -15,7 +15,7 @@ config.window_padding = {
 config.hide_tab_bar_if_only_one_tab = true
 config.background = {
   {
-    source = { File = os.getenv("HOME") .. "/Dropbox/Documents/Themes/Wallpapers/Desktop/METAPHOR WILL.jpg" },
+    source = { File = os.getenv("HOME") .. "/Dropbox/Wallpapers/Desktop/METAPHOR WILL.jpg" },
     hsb = { saturation = 0.5, brightness = 0.03 },
   },
 }

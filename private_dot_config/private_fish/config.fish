@@ -57,6 +57,11 @@ if status is-interactive
         abbr -a ca "bat --wrap=never --style=plain"
     end
 
+    if command -q uv
+        abbr -a uvr "uv run"
+        abbr -a uvp "uv pip"
+    end
+
     command -q rg && abbr -a rg 'rg --smart-case --hidden --glob=!.git --follow --color=always --vimgrep'
     command -q btop && alias m="btop"
     command -q nvim && alias vim="nvim" && alias e="nvim"
