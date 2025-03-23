@@ -1,0 +1,24 @@
+# -*- mode: conf-toml -*-
+[theme]
+name = "dracula"
+
+[colors]
+{{- if eq .theme "dark" }}
+Base       = "#F8F8F2"
+Annotation = "#9580FF"
+Title      = "#FF80BF"
+Important  = "#FFCA80"
+Guidance   = "#FF80BF"
+AlertInfo  = "#8AFF80"
+AlertWarn  = "#FFFF80"
+AlertError = "#FF9580"
+{{- else }}
+Base       = "#1F1F1F"
+Annotation = "#644AC9"
+Title      = "#A3144D"
+Important  = "#A34D14"
+Guidance   = "#A3144D"
+AlertInfo  = "#14710A"
+AlertWarn  = "#846E15"
+AlertError = "#CB3A2A"
+{{- end }}

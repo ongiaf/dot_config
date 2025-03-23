@@ -4,7 +4,11 @@
 
 # Specify desired highlighting theme (e.g. "TwoDark"). Run `bat --list-themes`
 # for a list of all available themes
+{{- if eq .theme "dark" }}
 --theme="Dracula Pro (Van Helsing)"
+{{- else }}
+--theme="Dracula Pro (Alucard)"
+{{- end }}
 
 # Enable this to use italic text on the terminal. This is not supported on all
 # terminal emulators (like tmux, by default):
