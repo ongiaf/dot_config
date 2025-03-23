@@ -1,0 +1,26 @@
+[misc]
+assume_yes = true
+disable = [
+  # will use doom emacs sync
+  "emacs",
+  # disable shell update
+  "shell", 
+  # disable js/ts related
+  "deno", "node", "pnpm", "yarn", 
+  # disable python related
+  "mamba", "pip3", "uv",
+]
+ignore_failures = ["containers"]
+
+[git]
+repos = [
+  # works I need to pay attention to
+  "~/Developer/3rd/sglang",             # sgl-project/sglang
+  "~/Developer/3rd/vllm",               # vllm-project/vllm
+  "~/Developer/3rd/Mooncake",           # kvcache-ai/Mooncake
+  "~/Developer/3rd/flash-fft-conv",     # HazyResearch/flash-fft-conv
+]
+
+[commands]
+"Doom Emacs" = "~/.config/emacs/bin/doom sync -u"
+
