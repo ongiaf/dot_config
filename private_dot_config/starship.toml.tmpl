@@ -17,6 +17,7 @@ $python\n\
 
 
 [palettes.dracula]
+{{- if eq .theme "dark" }}
 background   = "#0B0D0F"
 green        = "#8AFF80"
 orange       = "#FFCA80"
@@ -24,6 +25,15 @@ pink         = "#FF80BF"
 purple       = "#9580FF"
 red          = "#FF9580"
 yellow       = "#FFFF80"
+{{- else }}
+background   = "#C4C4C4"
+green        = "#14710A"
+orange       = "#A34D14"
+pink         = "#A3144D"
+purple       = "#644AC9"
+red          = "#CB3A2A"
+yellow       = "#846E15"
+{{- end }}
 
 
 [directory]
