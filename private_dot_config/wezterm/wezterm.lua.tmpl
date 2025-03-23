@@ -27,10 +27,10 @@ config.color_scheme = "DraculaAlucard"
 {{- end }}
 
 -- Fonts setting
-config.font = wezterm.font("PragmataPro Liga")
+config.font = wezterm.font("{{- .font.terminal }}")
 config.font_size = (wezterm.target_triple == 'aarch64-apple-darwin' and 17 or 13)
 config.window_frame = {}
-config.window_frame.font = wezterm.font("MonoLisa")
+config.window_frame.font = wezterm.font("{{- .font.program }}")
 config.window_frame.font_size = (wezterm.target_triple == 'aarch64-apple-darwin' and 12 or 9)
 
 config.max_fps = 60
