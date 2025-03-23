@@ -1,4 +1,5 @@
 # -*- mode: fish -*-
+
 if status --is-login
     # set XDG path
     set -gx XDG_CONFIG_HOME $HOME/.config
@@ -78,7 +79,7 @@ if status is-interactive
 
     command -q rg && abbr -a rg 'rg --smart-case --hidden --glob=!.git --follow --color=always --vimgrep'
     command -q btop && alias m="btop"
-    command -q nvim && alias vim="nvim" && alias e="nvim"
+    command -q nvim && alias vim="nvim" && alias e="nvim" && alias ce="chezmoi edit -a"
     command -q zoxide && zoxide init fish | source
     command -q starship && starship init fish | source
     command -q atuin && atuin init fish --disable-up-arrow | source
@@ -132,3 +133,5 @@ function fish_greeting
     echo -e "\\e[35m中指立ててけ！\\e[0m"
     echo
 end
+
+# vim: set ft=fish:

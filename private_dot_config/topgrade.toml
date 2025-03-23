@@ -19,6 +19,9 @@ repos = [
   "~/Developer/3rd/vllm",               # vllm-project/vllm
   "~/Developer/3rd/Mooncake",           # kvcache-ai/Mooncake
   "~/Developer/3rd/flash-fft-conv",     # HazyResearch/flash-fft-conv
+
+  # doom eamcs
+  "~/.config/emacs/"
 ]
 
 [commands]
