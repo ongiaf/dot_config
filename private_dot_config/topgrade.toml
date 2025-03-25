@@ -9,6 +9,8 @@ disable = [
   "deno", "node", "pnpm", "yarn", 
   # disable python related
   "mamba", "pip3", "uv",
+  # disable haskell
+  "stack",
 ]
 ignore_failures = ["containers"]
 
