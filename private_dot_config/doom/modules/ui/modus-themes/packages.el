@@ -3,4 +3,3 @@
 
 (package! modus-themes)
 (package! spacious-padding)
-(package! nova :recipe (:type git :host github :repo "thisisran/nova"))

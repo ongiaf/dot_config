@@ -3,6 +3,8 @@ assume_yes = true
 disable = [
   # will use doom emacs sync
   "emacs",
+  # disable nix update
+  "nix",
   # disable shell update
   "shell", 
   # disable js/ts related
@@ -14,6 +16,9 @@ disable = [
 ]
 ignore_failures = ["containers"]
 
+[brew]
+greedy_cask = true
+
 [git]
 repos = [
   # works I need to pay attention to
@@ -21,6 +26,10 @@ repos = [
   "~/Developer/3rd/vllm",               # vllm-project/vllm
   "~/Developer/3rd/Mooncake",           # kvcache-ai/Mooncake
   "~/Developer/3rd/flash-fft-conv",     # HazyResearch/flash-fft-conv
+  "~/Developer/3rd/btop",               # aristocratos/btop
+  "~/Developer/3rd/evo2",               # ArcInstitute/evo2
+  "~/Developer/3rd/vortex",             # Zymrael/vortex
+  "~/Developer/3rd/savanna",            # Zymrael/savanna
 
   # doom eamcs
   "~/.config/emacs/"

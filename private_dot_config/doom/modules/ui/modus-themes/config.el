@@ -49,9 +49,3 @@
 (use-package! spacious-padding
   :init
   (spacious-padding-mode 1))
-
-(use-package! nova
-  :init
-  (nova-vertico-mode 1)
-  ;; (nova-eldoc-mode 1)
-  )
