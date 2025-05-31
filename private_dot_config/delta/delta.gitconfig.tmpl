@@ -1,0 +1,25 @@
+[delta]
+  true-color = always
+  features = unobtrusive-line-numbers decorations side-by-side
+  whitespace-error-style = 22 reverse
+  navigate = true
+  hyperlinks = true
+{{- if eq .theme "dark" }}
+  dark = true
+{{- else }}
+  light = true
+{{- end }}
+
+[delta "unobtrusive-line-numbers"]
+    line-numbers = true
+    line-numbers-left-format = "{nm:>4}┆"
+    line-numbers-right-format = "{np:>4}┆"
+    line-numbers-left-style = blue
+    line-numbers-right-style = blue
+
+[delta "decorations"]
+    commit-decoration-style = bold yellow box
+    file-style = bold purple
+    file-decoration-style = none
+    hunk-header-decoration-style = yellow box
+
