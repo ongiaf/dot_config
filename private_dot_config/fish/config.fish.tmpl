@@ -87,7 +87,7 @@ if status is-interactive
     if command -q zellij
       set -xg ZELLIJ_CONFIG_DIR $HOME/.config/zellij
       # only enable in ghostty
-      if test "$TERM" = "xterm-ghostty"
+      if test "$TERM" = "xterm-ghostty" -a -z "$SSH_CLIENT" -a -z "$SSH_TTY"
         eval (zellij setup --generate-auto-start fish | string collect)
       end
     end
