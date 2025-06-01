@@ -5,15 +5,18 @@ if status --is-login
     set -gx XDG_CONFIG_HOME $HOME/.config
     set -gx XDG_DATA_HOME $HOME/.local/share
     set -gx XDG_CACHE_HOME $HOME/.cache
-    set -gx EDITOR nvim
     # set PATH
     set -gx PATH $PATH $HOME/.cargo/bin
     {{- if eq .chezmoi.os "darwin" }}
     # set some macOS application's PATH
+    command -q hx && set -gx EDITOR hx
     set -gx PATH $PATH /Applications/Keka.app/Contents/MacOS/
     set -gx PATH $PATH /Applications/WezTerm.app/Contents/MacOS/
     set -gx PATH $PATH /Applications/Vivaldi.app/Contents/MacOS/
     set -gx PATH $PATH /opt/homebrew/bin
+    {{- else }}
+    # archlinux is helix
+    command -q helix && set -gx EDITOR helix
     {{- end }}
 end
 
@@ -79,17 +82,23 @@ if status is-interactive
 
     command -q rg && abbr -a rg 'rg --smart-case --hidden --glob=!.git --follow --color=always --vimgrep'
     command -q btop && alias m="btop"
-    command -q nvim && alias vim="nvim" && alias e="nvim" && alias ce="chezmoi edit -a"
+    command -q nvim && alias vim="nvim"
+    {{- if eq .chezmoi.os "darwin" }}
+    command -q hx && alias e="hx"
+    {{- else }}
+    command -q helix && alias e="helix"
+    {{- end }}
+    command -q chezmoi && alias ce="chezmoi edit -a"
     command -q zoxide && zoxide init fish | source
     command -q starship && starship init fish | source
     command -q atuin && atuin init fish --disable-up-arrow | source
 
     if command -q zellij
-      set -xg ZELLIJ_CONFIG_DIR $HOME/.config/zellij
-      # only enable in ghostty
-      if test "$TERM" = "xterm-ghostty" -a -z "$SSH_CLIENT" -a -z "$SSH_TTY"
-        eval (zellij setup --generate-auto-start fish | string collect)
-      end
+        set -xg ZELLIJ_CONFIG_DIR $HOME/.config/zellij
+        # only enable in ghostty
+        if test "$TERM" = xterm-ghostty -a -z "$SSH_CLIENT" -a -z "$SSH_TTY"
+            eval (zellij setup --generate-auto-start fish | string collect)
+        end
     end
 
     # completion

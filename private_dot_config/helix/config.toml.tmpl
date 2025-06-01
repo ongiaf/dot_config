@@ -1,0 +1,28 @@
+{{- if eq .theme "dark" }}
+theme = "dracula_van_helsing"
+{{- else }}
+theme = "dracula_alucard"
+{{- end }}
+
+[editor]
+line-number = "relative"
+cursorline = true
+color-modes = true
+bufferline = "multiple"
+text-width = 120
+rulers = [120]
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.indent-guides]
+render = true
+character = "┆"
+
+[editor.lsp]
+display-inlay-hints = true
