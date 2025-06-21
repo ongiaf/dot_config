@@ -30,6 +30,7 @@ repos = [
   "~/Developer/3rd/evo2",               # ArcInstitute/evo2
   "~/Developer/3rd/vortex",             # Zymrael/vortex
   "~/Developer/3rd/savanna",            # Zymrael/savanna
+  "~/Developer/3rd/MMseqs2",            # soedinglab/MMseqs2 
 
   # doom eamcs
   "~/.config/emacs/"
