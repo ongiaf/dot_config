@@ -1,7 +1,6 @@
 [misc]
 assume_yes = true
 disable = [
-  # will use doom emacs sync
   "emacs",
   # disable nix update
   "nix",
@@ -13,6 +12,7 @@ disable = [
   "mamba", "pip3", "uv",
   # disable haskell
   "stack",
+  "yazi",
 ]
 ignore_failures = ["containers"]
 
@@ -31,11 +31,5 @@ repos = [
   "~/Developer/3rd/vortex",             # Zymrael/vortex
   "~/Developer/3rd/savanna",            # Zymrael/savanna
   "~/Developer/3rd/MMseqs2",            # soedinglab/MMseqs2 
-
-  # doom eamcs
-  "~/.config/emacs/"
 ]
-
-[commands]
-"Doom Emacs" = "~/.config/emacs/bin/doom sync -u"
 
