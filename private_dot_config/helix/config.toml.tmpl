@@ -24,7 +24,30 @@ hidden = false
 [editor.indent-guides]
 render = true
 character = "┆"
-skip-levels = 1
 
 [editor.lsp]
 display-inlay-hints = true
+
+[keys.normal]
+ret = "goto_word"
+
+[keys.normal.space]
+"space" = "file_picker"
+
+# file picker
+[keys.normal.space.f]
+f = "file_picker"
+g = "changed_file_picker"
+w = ":write"
+k = "file_picker_in_current_buffer_directory"
+d = "file_picker_in_current_directory"
+r = ":reload"
+a = ":toggle file-picker.git-ignore"
+
+# buffer picker
+[keys.normal.space.b]
+b = "buffer_picker"
+n = ":buffer-next"
+p = ":buffer-previous"
+k = ":buffer-close"
+x = ":write-buffer-close"
