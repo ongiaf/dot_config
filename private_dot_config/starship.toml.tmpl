@@ -36,7 +36,7 @@ yellow       = "#846E15"
 
 
 [directory]
-format = "[](fg:background)[$path]($style)[](fg:background) "
+format = "[$path]($style) "
 style = "bg:background fg:green"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -46,42 +46,42 @@ style = "fg:background"
 symbol = " "
 
 [git_branch]
-format = "[](fg:background)[ $symbol $branch ]($style)[](fg:background) "
+format = "[$symbol $branch ]($style) "
 style = "bg:background fg:pink"
 symbol = ""
 
 [git_status]
 style = "bg:background fg:red"
-format = '[](fg:background)[$all_status$ahead_behind]($style)[](fg:background) '
+format = "[$all_status$ahead_behind]($style) "
 disabled = false
 
 # Languages
 [c]
 style = "bg:background fg:orange"
-format = "[](fg:background)[$symbol$version]($style)[](fg:background) "
+format = "[$symbol$version]($style) "
 disabled = false
 symbol = " "
 
 [rust]
 style = "bg:background fg:orange"
-format = "[](fg:background)[$symbol$version]($style)[](fg:background) "
+format = "[$symbol$version]($style) "
 disabled = false
 symbol = ""
 
 [conda]
 style = "bg:background fg:yellow"
-format = '[](fg:background)[$symbol$environment]($style)[](fg:background) '
+format = "[$symbol$environment]($style) "
 disabled = false
 
 [python]
 style = "bg:background fg:orange"
-format = '[](fg:background)[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)[](fg:background) '
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style) '
 disabled = false
 symbol = ' '
 
 [lua] 
 style = "bg:background fg:orange"
-format = "[](fg:background)[$symbol$version]($style)[](fg:background) "
+format = "[$symbol$version]($style) "
 disabled = false
 symbol = '  '
 

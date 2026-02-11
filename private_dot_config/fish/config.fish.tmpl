@@ -11,9 +11,8 @@ if status --is-login
     # set some macOS application's PATH
     command -q hx && set -gx EDITOR hx
     set -gx PATH $PATH /Applications/Keka.app/Contents/MacOS/
-    set -gx PATH $PATH /Applications/WezTerm.app/Contents/MacOS/
     set -gx PATH $PATH /Applications/Vivaldi.app/Contents/MacOS/
-    set -gx PATH $PATH /opt/homebrew/bin
+    set -gx PATH /opt/homebrew/bin $PATH
     {{- else }}
     # archlinux is helix
     command -q helix && set -gx EDITOR helix
@@ -81,12 +80,11 @@ if status is-interactive
     end
 
     command -q rg && abbr -a rg 'rg --smart-case --hidden --glob=!.git --follow --color=always --vimgrep'
-    command -q btop && alias m="btop"
-    command -q nvim && alias vim="nvim"
+    command -q btop && abbr -a  m "btop"
     {{- if eq .chezmoi.os "darwin" }}
-    command -q hx && alias e="hx"
+    command -q hx && abbr -a e "hx" && abbr -a vim "hx"
     {{- else }}
-    command -q helix && alias e="helix"
+    command -q helix && abbr -a e "helix" && abbr -a vim "helix"
     {{- end }}
     command -q chezmoi && alias ce="chezmoi edit -a"
     command -q zoxide && zoxide init fish | source
